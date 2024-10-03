@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report | Penny Wise</title>
+    <link rel="stylesheet" href="../style/report.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div id="report">
+     
+
+      <!-- Filters Section -->
+      <div id="filters">
+        <label for="date-range">Date Range:</label>
+        <div id="date-range">
+
+          <input type="date" id="start-date" />
+          <input type="date" id="end-date" />
+        </div>
+
+       
+
+        <label for="account">Account:</label>
+        <select id="account">
+          <option value="all">All</option>
+         
+        </select>
+
+        <button id="apply-filters">Apply Filters</button>
+      </div>
+
+      <!-- Dashboard Overview -->
+      <div id="dashboard-overview">
+        <div id="total-income">Total Income: $0.00</div>
+
+        <div id="total-expenses">Total Expenses: $0.00</div>
+
+        <div id="total-savings">Total Savings: $0.00</div>
+      </div>
+
+      <!-- Charts Section -->
+      <div id="charts">
+        <div class="chart-container">
+            <canvas id="income-trend-chart"></canvas>
+           
+            <div class="no-data-message">
+              <i class="fa-solid fa-chart-line"></i>
+              <p>No data available for Income Trend.</p>
+            </div>
+        </div>
+        <div class="chart-container">
+            <canvas id="expense-trend-chart"></canvas>
+           
+            <div class="no-data-message">
+              <i class="fa-solid fa-chart-line"></i>
+              <p>No data available for Expense Trend.</p>
+            </div>
+        </div>
+        <div class="chart-container">
+            <canvas id="budget-analysis-chart"></canvas>
+            
+            <div class="no-data-message">
+              <i class="fa-solid fa-chart-line"></i>
+              <p>No data available for Budget Analysis.</p>
+            </div>
+        </div>
+        <div class="chart-container">
+            <canvas id="cash-flow-chart"></canvas>
+            
+            <div class="no-data-message">
+              <i class="fa-solid fa-chart-line"></i>
+              <p>No data available for Cash Flow.</p>
+            </div>
+        </div>
+    </div>
+    
+
+      <!-- Export Options -->
+      <div id="export-options">
+        <button id="download-csv">Download CSV</button>
+        <button id="download-pdf">Download PDF</button>
+      </div>
+    </div>
+    <script type="module" src="../script/report.js"></script>
+  </body>
+</html>

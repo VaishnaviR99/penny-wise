@@ -1,0 +1,575 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+:root {
+  --primary-background: rgb(137, 219, 107);
+  --secondary-background: rgb(1, 187, 199);
+  --primary-text: rgb(216, 218, 225);
+  --secondary-text: rgb(82, 96, 113);
+  --text-color: rgb(159, 169, 181);
+}
+#container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#sidebar {
+  display: none;
+ 
+}
+
+#myLogo {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0;
+  gap: 0.3rem;
+  color: var(--primary-background);
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+#myLogo i {
+  font-size: 1.5rem;
+}
+.menu-item {
+  display: flex;
+  justify-content: flex-start;
+  width: 150px;
+  align-items: center;
+  gap: 15%;
+  margin-bottom: 20%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  color: var(--secondary-background);
+}
+.menu-item i {
+  width: 20px;
+}
+
+nav {
+  position: relative;
+  width: 100%;
+  background-color: transparent;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hamburger button {
+  border: none;
+  background-color: transparent;
+  color: rgb(72, 70, 70);
+  font-weight: bolder;
+  font-size: large;
+}
+#dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  padding: 0.8rem;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 0.5rem;
+}
+#hamburger:hover #dropdown-menu {
+  display: block;
+}
+#mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgb(234, 236, 244);
+  width: 100%;
+  z-index: 100;
+}
+
+#mobile-menu .menu-item {
+  padding: 1rem;
+  text-align: center;
+}
+
+#mobile-menu .menu-item:hover {
+  background-color: var(--primary-background);
+}
+
+#profile {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #dfdcdcee;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  
+}
+.username {
+  font-size: 1rem;
+}
+#profile:hover {
+  transform: scale(0.95);
+}
+
+#user-modal {
+  position: absolute;
+  top: 4.8rem;
+  right: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  display: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 10;
+
+}
+
+#userDetail {
+  display: flex;
+  gap: 0.8rem;
+  border-bottom: 1px solid #dfdcdcee;
+  padding: 0.6rem 1rem;
+}
+#userDetail .useremail {
+  color: #4a5b6a;
+}
+
+#Change-p {
+  margin: 0.7rem;
+}
+.profileIcons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0.7rem;
+  gap: 0.7rem;
+}
+.profileIcons img:hover {
+  opacity: 0.7;
+}
+
+.selected {
+  border: 4px solid var(--secondary-background);
+  border-radius: 100%;
+}
+
+#logout {
+  display: flex;
+  margin: 0.7rem;
+  gap: 0.7rem;
+  transition: all 0.2s ease-in-out;
+}
+#logout:hover {
+  color: #4a5b6a;
+  cursor: pointer;
+}
+#main {
+  flex: 1;
+  background-color: white;
+  height: 100vh;
+}
+
+#content-area {
+  height: 85%;
+  overflow-y: auto;
+}
+
+#Dashboard {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  padding: 1rem;
+  overflow-y: auto;
+  text-align: left;
+
+}
+
+#total-balance-section {
+  display: inline-block;
+  padding: 1rem 0.5rem;
+  background-color: rgb(242, 243, 247);
+  border: 1px solid #e4e2e2ee;
+  border-radius: 0.5rem;
+  text-align: center;
+  line-height: 2rem;
+  
+  
+}
+
+#total-balance {
+  font-size: 1.5rem;
+  color: #ff735c;
+}
+
+#account-balances {
+  display: flex;
+justify-content: space-evenly;
+gap: .2rem;
+  font-size: .8rem;
+  color: #666;
+  font-weight: bold;
+ 
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+  gap: 1rem;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 0.5rem;
+  padding: .5rem;
+ 
+
+}
+.empty-graph {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+}
+.empty-graph i{
+  background-color: #e3e6e9;
+  padding: 2rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: var(--secondary-background);
+}
+.empty-graph p{
+  color: #888;
+  text-align: center;
+  font-size: medium;
+}
+#graph-section {
+  width: 99%;
+  height: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem;
+  font-size: .7rem;
+
+}
+#income-expense-chart{
+ 
+  display: none;
+}
+#transactions-section {
+  padding: 0.5rem;
+  background-color: rgb(248, 249, 251);
+  border: 1px solid #e4e2e2ee;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  
+}
+
+#transactions-section h2 {
+  margin-top: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: rgb(72, 70, 70);
+}
+
+#transaction-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+#transaction-list li{
+  color: #888;
+  text-align: center;
+}
+
+.latest {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.tranxn-title {
+  color: rgb(90, 87, 87);
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.latest > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.transaction-amount {
+  color: rgb(255, 149, 158);
+}
+
+.transaction-amount.income {
+  color: var(--secondary-background);
+}
+
+.date {
+  font-size: smaller;
+  color: #b8b9ba;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+.greeting-section {
+  position: relative;
+  background-color: var(--secondary-background);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  line-height: 1.5rem;
+}
+.greeting-section img { 
+  right: 0;
+  top: -2.5rem;
+  width:100px;
+  height: 100%;
+  object-fit: contain;
+  /* display: none; */
+}
+
+.welcome-text h1 {
+  font-size: 1.3rem;
+  color: #ff735c;
+}
+.welcome-text #username {
+  color: var(--primary-text);
+  text-transform: capitalize;
+  color: white;
+}
+
+.welcome-text p {
+  margin: 5px 0;
+  font-size: .9rem;
+  color: rgb(224, 220, 220);
+  
+}
+
+.account-summary {
+  font-weight: 500;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+
+/* Tablet View */
+@media  screen and (min-width: 480px) and (max-width: 768px)  {
+ 
+  #user-modal {
+
+    right: 6rem;
+   
+  }
+  #content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+  }
+  
+  #graph-section {
+    width: 70%;
+    font-size: 1rem;
+  }
+  
+
+  .tranxn-title {
+    
+    font-size: 1rem;
+  }
+  .greeting-section {
+   
+    padding: .5rem;
+    padding-left: 2rem;
+   
+  }
+  .greeting-section img {
+   
+    width:150px;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .welcome-text h1 {
+    font-size: 1.5rem;
+    color: #ff735c;
+   
+  }
+
+  
+  .account-summary {
+    font-weight: 500;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+}
+
+/* Desktop View */
+@media  screen and (min-width: 769px) {
+  #sidebar {
+    display: block;
+    flex: 0 0 200px;
+  background-color: rgb(234, 236, 244);
+  color: #67667c;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  }
+  
+  #myLogo {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0.5rem;
+    gap: 0.3rem;
+    color: var(--primary-background);
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+  #myLogo i {
+    font-size: 1.5rem;
+  }
+  .menu-item {
+    display: flex;
+    justify-content: flex-start;
+    width: 150px;
+    align-items: center;
+    gap: 15%;
+    margin-bottom: 20%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .menu-item:hover,
+  .menu-item.active {
+    color: var(--secondary-background);
+  }
+  .menu-item i {
+    width: 20px;
+  }
+  
+  nav {
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  #hamburger {
+    display: none;
+    cursor: pointer;
+  }
+  #user-modal {
+  
+    right: 6rem;
+    
+  }
+  
+  #total-balance-section {
+    display: inline-block;
+    padding: 2rem .5rem;
+    width: 500px;
+    
+  }
+  
+  #total-balance {
+    font-size: 2rem;
+   
+  }
+  #account-balances {
+    display: flex;
+  justify-content: space-evenly;
+  gap: .5rem;
+    font-size: 1rem;
+    color: #666;
+    font-weight: bold;
+   
+  }
+  
+  #content {
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    height: 550px;
+  }
+  
+  #graph-section {
+    width: 70%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #transactions-section {
+    
+    padding: 1rem;
+  }
+  
+  .greeting-section {
+  
+    padding: 2rem;
+   
+  }
+  .greeting-section img {
+    position: absolute;
+    right: 0;
+    top: -2.50rem;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .welcome-text h1 {
+    font-size: 2rem;
+    
+  }
+
+}

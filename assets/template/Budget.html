@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget | Penny Wise</title>
+    <link rel="stylesheet" href="../style/budget.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+   
+  </head>
+  <body>
+    <main id="budget">
+      <div id="budget-page">
+        <div id="account-addBtn">
+          <div id="account">
+            <label for="account-select">Select Account</label>
+            <select id="account-select">
+              <option value="all">All Accounts</option>
+              <!-- Account options will be populated here -->
+            </select>
+          </div>
+          
+            <button id="add-budget">Add Budget</button>
+          
+        </div>
+<div id="summary-chart">
+  <div id="summary">
+    <h2>Summary</h2>
+    <p>Total Balance: <span id="total-Balance">$0.00</span></p>
+    <p>Total Income: <span id="total-income">$0.00</span></p>
+    <p>Total Expenses: <span id="total-expenses">$0.00</span></p>
+  </div>
+  <div id="income-expense-chart-conatiner">
+    <canvas id="income-expense-chart"></canvas>
+    <div class="no-data-message">
+      <i class="fa-solid fa-chart-pie"></i>
+      <p>No data available</p>
+    </div>
+  </div>
+</div>
+      
+
+        <div id="budget-analysis">
+          <div id="budget-categories">
+            <h2>Budget Categories</h2>
+            <div id="category-list">
+              <!-- Budget categories will be listed here -->
+            </div>
+          </div>
+          <div id="expense-charts">
+            <h2>Spending by Category</h2>
+            <canvas id="expense-chart"></canvas>
+           
+            <div class="no-data-message">
+              <i class="fa-solid fa-chart-pie"></i>
+              <p>No expense data available</p>
+            </div>
+          </div>
+        </div>
+
+        <h1 id="Analysis-title">Budget Analysis</h1>
+        <div id="budget-charts">
+          <!-- <canvas id="budget-progress-chart"></canvas> -->
+         
+          <div class="no-data-message">
+            <i class="fa-solid fa-chart-pie"></i>
+            <p>No budget progress data available</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div id="budget-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <button class="tablink">Add Budget Category</button>
+
+          <form id="budget-category-form">
+            <div class="input-group">
+              <div class="icon">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+                <i class="fa-solid fa-caret-right"></i>
+              </div>
+              <select id="budget-category">
+                <option value="select">Select Category</option>
+                <option value="shopping">Shopping</option>
+                <option value="food">Food</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="bills&utilities">Bills & Utilities</option>
+                <option value="education">Education</option>
+                <option value="transport">Transport</option>
+                <option value="health">Health</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <div class="icon">
+                <i class="fa-solid fa-circle-dollar-to-slot"></i>
+
+                <i class="fa-solid fa-caret-right"></i>
+              </div>
+              <input
+                type="number"
+                id="budget-amount"
+                placeholder="Budget Amount"
+                required
+              />
+            </div>
+            <button type="submit" class="add-btn">Add Budget</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <script src="../script/budget.js"></script>
+ 
+</html>

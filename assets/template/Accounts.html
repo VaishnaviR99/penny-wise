@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accounts | Penny Wise</title>
+    <link rel="stylesheet" href="../style/accounts.css" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  </head>
+  <body>
+    <main id="accounts">
+      <button id="add-account-btn">Add New</button>
+
+      <section id="banks">
+        <div id="bank-cards">
+          <div class="container" >
+            <span class="logo">
+              <img src="../media/chase.png" alt="" />
+              <h5>Chase Bank</h5>
+            </span>
+
+            <h3 id="balance">XXXX USD</h3>
+            <div class="card-details">
+              <div class="name-number">
+                <h5 class="name">Account Holder Name</h5>
+                <h6 class="num-label">Account Number</h6>
+                <h5 class="number">xxx xxx 1234</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="info">
+        <i class="fa-solid fa-circle-info"></i>
+        <p>
+          The bank account details you provide are used solely for your
+          reference and visual representation within the app. You can add a
+          maximum of three bank accounts. Rest assured, your data is secure with
+          us and will not be misused.
+        </p>
+      </section>
+
+      <div id="account-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+
+          <button class="tablink active" data-tab="bank-form">
+            Bank Account
+          </button>
+
+          <div id="bank-form" class="tabcontent">
+            <form id="bank-account-form">
+              <div class="input-group">
+                <div class="icon">
+                  <i class="fa-solid fa-building-columns"></i>
+                  <i class="fa-solid fa-caret-right"></i>
+                </div>
+
+                <select id="bank-name">
+                  <option value="">Select Bank</option>
+                  <option value="chase">Chase Bank</option>
+                  <option value="bankofamerica">Bank of America</option>
+                  <option value="wellsfargo">Wells Fargo</option>
+                  <option value="citibank">Citibank</option>
+                  <option value="tdbank">TD Bank</option>
+                  <option value="other">Other</option>
+                </select>
+
+                <input type="text" id="otherBankName" style="display: none" />
+              </div>
+              <div class="input-group">
+                <div class="icon">
+                  <i class="fa-solid fa-address-card"></i>
+                  <i class="fa-solid fa-caret-right"></i>
+                </div>
+
+                <input
+                  type="text"
+                  id="account-number"
+                  name="account-number"
+                  placeholder="Account Number"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <div class="icon">
+                  <i class="fa-solid fa-user"></i>
+                  <i class="fa-solid fa-caret-right"></i>
+                </div>
+
+                <input
+                  type="text"
+                  id="account-holder"
+                  name="account-holder"
+                  placeholder="Account Holder Name"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <div class="icon">
+                  <i class="fa-solid fa-hand-holding-dollar"></i>
+                  <i class="fa-solid fa-caret-right"></i>
+                </div>
+                <input
+                  type="number"
+                  id="account-balance"
+                  name="account-balance"
+                  placeholder="Account Balance"
+                  required
+                />
+              </div>
+              <button type="submit">Add Bank Account</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="../script/accounts.js"></script>
+  </body>
+</html>

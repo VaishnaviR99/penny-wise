@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transactions | Penny Wise</title>
+    <link rel="stylesheet" href="../style/transactions.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- AOS CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+  </head>
+  <body>
+    <main id="transaction">
+      <section class="transactions">
+        <h2>Recent Transactions</h2>
+        <button id="add-transaction-btn">Add Transaction</button>
+        <div id="transaction-cards">
+          <!-- <div>
+            <i class="fa-solid fa-sack-xmark"></i>
+
+            <p class="noTranxn">No Transactions Found</p>
+          </div> -->
+        </div>
+      </section>
+
+      <div id="transaction-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+
+          <div class="tabs">
+            <button class="tablink active" data-tab="expense-form">
+              Expense
+            </button>
+            <button class="tablink" data-tab="income-form">Income</button>
+          </div>
+
+          <div id="expense-form" class="tabcontent">
+            <form id="expense-transaction-form">
+              <div class="input-group">
+                <div class="icon">
+                  <i class="fa-regular fa-file-lines"></i>
+                  <i class="fa-solid fa-caret-right"></i>
+                </div>
+
+                <input
+                  type="text"
+                  id="expense-title"
+                  name="title"
+                  value=""
+                  placeholder="Title"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <div class="icon">
+                  <i class="fa-solid fa-money-bill-transfer"></i>
+                  <i class="fa-solid fa-caret-right"></i>
+                </div>
+                <select name="category" id="expense-category">
+                  <option value="select">Select Category</option>
+                  <option value="shopping">Shopping</option>
+                  <option value="food">Food</option>
+                  <option value="entertainment">Entertainment</option>
+                  <option value="bills&utilities">Bills & Utilities</option>
+                  <option value="education">Education</option>
+                  <option value="transport">Transport</option>
+                  <option value="health">Health</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <div class="icon">
+                  <i class="fa-solid fa-building-columns"></i>
+                  <i class="fa-solid fa-caret-right"></i>
+                </div>
+                <select id="expense-account" name="account" required>
+                  <option value="">Select Bank Account</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <div class="icon">
+                  <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                  <i class="fa-solid fa-caret-right"></i>
+                </div>
+                <input
+                  type="number"
+                  id="expense-amount"
+                  name="amount"
+                  value=""
+                  placeholder="Amount"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <div class="icon">
+                  <i class="fa-regular fa-calendar-days"></i>
+                  <i class="fa-solid fa-caret-right"></i>
+                </div>
+                <input
+                  type="date"
+                  id="expense-date"
+                  name="date"
+                  value=""
+                  required
+                />
+              </div>
+              <button type="submit" class="add-btn">Add Expense</button>
+            </form>
+          </div>
+
+          <div id="income-form" class="tabcontent" style="display: none">
+            <form id="income-transaction-form">
+              <div class="input-group">
+                <div class="icon">
+                  <i class="fa-regular fa-file-lines"></i>
+                  <i class="fa-solid fa-caret-right"></i>
+                </div>
+                <input
+                  type="text"
+                  id="income-title"
+                  name="title"
+                  value=""
+                  placeholder="Title"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <div class="icon">
+                  <i class="fa-solid fa-money-bill-transfer"></i>
+                  <i class="fa-solid fa-caret-right"></i>
+                </div>
+
+                <select id="incomeCategory" name="incomeCategory">
+                  <option value="">Select Income Category</option>
+                  <option value="salary">Salary</option>
+                  <option value="bonus">Bonus</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <div class="icon">
+                  <i class="fa-solid fa-building-columns"></i>
+                  <i class="fa-solid fa-caret-right"></i>
+                </div>
+                <select id="income-account" name="account" required>
+                  <option value="">Select Bank Account</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <div class="icon">
+                  <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                  <i class="fa-solid fa-caret-right"></i>
+                </div>
+                <input
+                  type="number"
+                  id="income-amount"
+                  name="amount"
+                  value=""
+                  placeholder="Amount"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <div class="icon">
+                  <i class="fa-regular fa-calendar-days"></i>
+                  <i class="fa-solid fa-caret-right"></i>
+                </div>
+                <input
+                  type="date"
+                  id="income-date"
+                  name="date"
+                  value=""
+                  required
+                />
+              </div>
+              <button type="submit" class="add-btn">Add Income</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="../script/Transactions.js"></script>
+  </body>
+</html>

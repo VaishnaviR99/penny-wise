@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup</title>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="../style/index.css" />
+
+    <!-- vendors -->
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Fonteawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main id="forms-section">
+      <div
+        id="back"
+        onclick="window.location.href='/practice/task_8/index.html'"
+      >
+        <span><i class="fa-solid fa-chevron-left"></i></span>
+        <p>Back</p>
+      </div>
+
+      <h1 class="section-title">Join Us Now !</h1>
+      <div class="forms">
+        <div class="form-wrapper is-active">
+          <button type="button" class="switcher switcher-login">
+            Login
+            <span class="underline"></span>
+          </button>
+          <form class="form form-login">
+            <div class="input-block">
+              <div class="input-icon">
+                <i class="fa-regular fa-envelope"></i>
+                <i class="fa-solid fa-caret-right"></i>
+              </div>
+              <input id="login-email" type="email" placeholder="Enter Email" />
+            </div>
+            <p class="error-message"></p>
+            <div class="input-block">
+              <div class="input-icon">
+                <i class="fa-solid fa-lock"></i>
+                <i class="fa-solid fa-caret-right"></i>
+              </div>
+
+              <input
+                id="login-password"
+                type="password"
+                placeholder="Enter Password"
+              />
+            </div>
+            <p class="error-message"></p>
+            <button type="submit" class="btn-login">Login</button>
+            <p class="signupHere">
+              Don't have an account ? Singup here
+              <i class="fa-solid fa-angles-right"></i>
+            </p>
+          </form>
+        </div>
+        <div class="form-wrapper">
+          <button type="button" class="switcher switcher-signup">
+            Sign Up
+            <span class="underline"></span>
+          </button>
+          <form class="form form-signup">
+            <div class="input-block">
+              <div class="input-icon">
+                <i class="fa-regular fa-user"></i>
+                <i class="fa-solid fa-caret-right"></i>
+              </div>
+              <input
+                id="signup-username"
+                type="text"
+                placeholder="Enter Username"
+              />
+            </div>
+            <p class="error-message"></p>
+            <div class="input-block">
+              <div class="input-icon">
+                <i class="fa-regular fa-envelope"></i>
+                <i class="fa-solid fa-caret-right"></i>
+              </div>
+              <input id="signup-email" type="email" placeholder="Enter Email" />
+            </div>
+            <p class="error-message"></p>
+            <div class="input-block">
+              <div class="input-icon">
+                <i class="fa-solid fa-lock"></i>
+                <i class="fa-solid fa-caret-right"></i>
+              </div>
+              <input
+                id="signup-password"
+                type="password"
+                placeholder="Enter Password"
+              />
+            </div>
+            <p class="error-message"></p>
+
+            <button type="submit" class="btn-signup">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <div id="notification" class="notification"></div>
+    <script src="../script/index.js"></script>
+  </body>
+</html>

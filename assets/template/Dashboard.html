@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penny Wise | Home</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="../style/Dashboard.css" />
+
+    <!-- vendors -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <main id="Dashboard">
+      <div class="greeting-section">
+        <div class="welcome-text">
+          <h1>Hello, <span id="username"></span>!</h1>
+          <p>Welcome back! Here's a quick look at your financial overview:</p>
+        </div>
+        <img src="../media/greeting.png" alt="greeting" />
+      </div>
+
+      <div id="total-balance-section">
+        <h1 id="total-balance">$0.00</h1>
+        <div id="account-balances"></div>
+      </div>
+
+      <div id="content" data-aos="fade-up">
+        <div id="graph-section">
+          <h1>Income vs Expense</h1>
+          <!-- <canvas id="income-expense-chart"></canvas> -->
+          <div class="empty-graph">
+            <i class="fa-solid fa-chart-line"></i>
+            <p class="no-data-message">
+              Income vs Expense chart will be shown here
+            </p>
+          </div>
+        </div>
+        <div id="transactions-section">
+          <h2>Recent Transactions</h2>
+          <div id="transaction-list">
+          
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="../script/Dashboard.js"></script>
+  </body>
+</html>

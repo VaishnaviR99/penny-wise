@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker App</title>
+    <link rel="stylesheet" href="./assets/style/index.css" />
+    <!-- vendors -->
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Fonteawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main id="index">
+      <nav>
+        <div id="myLogo" onclick="window.location.href='/task_8/index.html'">
+          <span><i class="fa-solid fa-magnifying-glass-dollar"></i></span>
+          <h1>Penny Wise</h1>
+        </div>
+        <button id="regtr">Signup</button>
+      </nav>
+
+      <section id="hero">
+        <div class="container">
+          <h2>Manage Your Expenses Effortlessly</h2>
+          <p>
+            Track your spending, set budgets, and achieve your financial goals
+            with our easy-to-use expense tracker app.
+          </p>
+          <a href="./assets/template/Auth.html" class="btn">Get Started</a>
+        </div>
+        <div id="heroImg">
+          <img src="./assets/media/undraw_investing_7u74.svg" alt="heroimg" />
+        </div>
+      </section>
+
+      <div
+        id="heading"
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="40"
+        data-aos-duration="800"
+        data-aos-easing="ease-in-out"
+      >
+        <h2>Penny Wise Features</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+          ipsum dolor, et non repellendus doloremque.
+        </p>
+      </div>
+
+      <section id="features">
+        <div class="feature">
+          <img
+            src="./assets/media/f1svg.svg"
+            alt=""
+            data-aos="fade-right"
+            data-aos-offset="200"
+            data-aos-delay="40"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+          />
+          <div class="descp">
+            <h3>Track Your Spending</h3>
+            <p>Monitor your daily expenses and stay within your budget.</p>
+          </div>
+        </div>
+
+        <div class="feature reverse">
+          <img
+            src="./assets/media/f2.svg"
+            alt=""
+            data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-delay="40"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+          />
+          <div class="descp">
+            <h3>Set Budgets</h3>
+            <p>
+              Plan your finances better by setting monthly or yearly budgets.
+            </p>
+          </div>
+        </div>
+        <div class="feature">
+          <img
+            src="./assets/media/f1svg.svg"
+            alt=""
+            data-aos="fade-right"
+            data-aos-offset="200"
+            data-aos-delay="40"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+          />
+          <div class="descp">
+            <h3>Generate Reports</h3>
+            <p>
+              Get detailed insights into your spending patterns with our
+              comprehensive reports.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div id="about">
+          <h2>About Us</h2>
+          <div id="mission">
+            <div id="aboutImg">
+              <img
+                src="./assets/media/about.svg"
+                alt="about img"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-duration="700"
+                data-aos-easing="ease-in-out"
+              />
+            </div>
+            <div class="about-data">
+              <h3>Our Mission</h3>
+              <p>
+                Our mission is to help you take control of your finances with
+                ease and efficiency. Our expense tracker app is designed with
+                simplicity and functionality in mind, ensuring you can manage
+                your money without any hassle.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          &copy; 2024 All rights reserved | Penny Wise made with
+          <i class="fa-solid fa-heart" style="color: red"></i> &nbsp;by
+          Vaishnavi
+        </p>
+        <p>
+          Contact us at
+          <a href="mailto:support@expensetrackerapp.com"
+            >support@expensetrackerapp.com</a
+          >
+        </p>
+      </footer>
+    </main>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      $(() => {
+        $("#regtr").on("click", function () {
+          window.location.href = "./assets/template/Auth.html";
+        });
+      });
+    </script>
+  </body>
+</html>

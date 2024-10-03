@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penny Wise | Home</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="../style/Dashboard.css" />
+
+    <!-- vendors -->
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Fonteawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main id="container">
+      <section id="sidebar">
+        <div
+          id="myLogo"
+          onclick="window.location.href='/task_8/assets/template/Home.html'"
+        >
+          <span><i class="fa-solid fa-magnifying-glass-dollar"></i></span>
+          <h1>Penny Wise</h1>
+        </div>
+
+        <div class="menu-item active" data-content="Dashboard.html">
+          <i class="fas fa-chart-line"></i>
+          <p>Dashboard</p>
+        </div>
+        <div class="menu-item" data-content="Budget.html">
+          <i class="fas fa-piggy-bank"></i>
+          <p>Budget</p>
+        </div>
+        <div class="menu-item" data-content="Transaction.html">
+          <i class="fas fa-exchange-alt"></i>
+          <p>Transactions</p>
+        </div>
+        <div class="menu-item" data-content="Accounts.html">
+          <i class="fas fa-money-bill-alt"></i>
+          <p>Accounts</p>
+        </div>
+
+        <div class="menu-item" data-content="Report.html">
+          <i class="fas fa-chart-bar"></i>
+          <p>Reports</p>
+        </div>
+      </section>
+
+      <section id="main">
+        <nav>
+          <div id="hamburger">
+            <div id="dropdown">
+              <button><i class="fa-solid fa-bars"></i></button>
+              <div id="dropdown-menu">
+                <div class="menu-item active" data-content="Dashboard.html">
+                  <i class="fas fa-chart-line"></i>
+                  <p>Dashboard</p>
+                </div>
+                <div class="menu-item" data-content="Budget.html">
+                  <i class="fas fa-piggy-bank"></i>
+                  <p>Budget</p>
+                </div>
+                <div class="menu-item" data-content="Transaction.html">
+                  <i class="fas fa-exchange-alt"></i>
+                  <p>Transactions</p>
+                </div>
+                <div class="menu-item" data-content="Accounts.html">
+                  <i class="fas fa-money-bill-alt"></i>
+                  <p>Accounts</p>
+                </div>
+                <div class="menu-item" data-content="Report.html">
+                  <i class="fas fa-chart-bar"></i>
+                  <p>Reports</p>
+                </div>
+              </div>
+            </div>
+            <div id="myLogo">
+              <h1 id="myLogo">Penny Wise</h1>
+            </div>
+          </div>
+          <div id="profile">
+            <p class="username"></p>
+            <img
+              src=""
+              alt="user-profile"
+              height="40px"
+              width="40px"
+              class="profile-image"
+            />
+          </div>
+          <div id="user-modal">
+            <div id="userDetail">
+              <img
+                src=""
+                alt="user-profile"
+                height="40px"
+                width="40px"
+                class="profile-image"
+              />
+              <div>
+                <p class="username"></p>
+                <p class="useremail"></p>
+              </div>
+            </div>
+
+            <p id="Change-p">Change Profile</p>
+            <div id="profileIcons-f" class="profileIcons">
+              <img
+                src="../media/farmer_1449735.png"
+                alt="farmer"
+                height="35px"
+                width="35px"
+              />
+              <img
+                src="../media/skater_1881011.png"
+                alt="skater"
+                height="35px"
+                width="35px"
+              />
+              <img
+                src="../media/woman_1912042.png"
+                alt="woman"
+                height="35px"
+                width="35px"
+              />
+              <img
+                src="../media/woman_1912062.png"
+                alt="woman2"
+                height="35px"
+                width="35px"
+              />
+
+              <img
+                src="../media/explorer_7933912.png"
+                alt="explorer"
+                height="35px"
+                width="35px"
+              />
+              <img
+                src="../media/man_1912109.png"
+                alt="man"
+                height="35px"
+                width="35px"
+              />
+              <img
+                src="../media/man_9307805.png"
+                alt="man2"
+                height="35px"
+                width="35px"
+              />
+              <img
+                src="../media/social_14064331.png"
+                alt="social"
+                height="35px"
+                width="35px"
+              />
+            </div>
+            <hr />
+            <div id="logout">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <p>Log Out</p>
+            </div>
+          </div>
+        </nav>
+
+        <div id="content-area"></div>
+      </section>
+    </main>
+    <script type="module" src="../script/Home.js"></script>
+  </body>
+</html>
